@@ -8,7 +8,7 @@ To get the project up and running on your local machine, follow these steps:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/santoshacharya2468/shoesly
+    git clone https://github.com/Mobile-Development-Project-GR-1/shoes_app_mobile_app.git
     cd your-repository
     ```
 
