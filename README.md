@@ -1,4 +1,4 @@
-# SHOESLY 
+# SHOES APP MOBILE APPLICATIONs
 Flutter 3.19.6 • channel stable • https://github.com/flutter/flutter.git
 
 ## Project Setup Instructions
