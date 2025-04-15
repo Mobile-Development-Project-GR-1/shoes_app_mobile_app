@@ -15,8 +15,12 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../../features/brand/data/repository/brand_repository.dart' as _i6;
 import '../../features/brand/data/repository/i_brand_repository.dart' as _i5;
-import '../../features/brand/presentation/bloc/brand_bloc.dart' as _i7;
-import 'module_injection.dart' as _i8;
+import '../../features/brand/presentation/bloc/brand_bloc.dart' as _i10;
+import '../../features/product/data/repository/i_product_repository.dart'
+    as _i7;
+import '../../features/product/data/repository/product_repository.dart' as _i8;
+import '../../features/product/presentation/bloc/product_bloc.dart' as _i9;
+import 'module_injection.dart' as _i11;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -34,9 +38,14 @@ extension GetItInjectableX on _i1.GetIt {
     gh.singleton<_i4.FirebaseAuth>(() => localModule.firebaseAuth());
     gh.factory<_i5.IBrandRepository>(
         () => _i6.BrandRepository(db: gh<_i3.FirebaseFirestore>()));
-    gh.factory<_i7.BrandBloc>(() => _i7.BrandBloc(gh<_i5.IBrandRepository>()));
+    gh.factory<_i7.IProductRepository>(
+        () => _i8.ProductRepository(db: gh<_i3.FirebaseFirestore>()));
+    gh.factory<_i9.ProductBloc>(
+        () => _i9.ProductBloc(gh<_i7.IProductRepository>()));
+    gh.factory<_i10.BrandBloc>(
+        () => _i10.BrandBloc(gh<_i5.IBrandRepository>()));
     return this;
   }
 }
 
-class _$LocalModule extends _i8.LocalModule {}
+class _$LocalModule extends _i11.LocalModule {}
